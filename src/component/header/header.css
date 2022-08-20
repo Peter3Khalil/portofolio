@@ -1,0 +1,139 @@
+header{
+    height: 100vh;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows:.8fr 1.5fr repeat(2,1fr);
+    grid-template-areas: 
+    ". center ."
+    ". center ."
+    ". center ."
+    "box box box"
+    ;
+    justify-items: center;
+    align-items: end ;
+}
+.center{
+    grid-area: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    grid-area: box;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.cta{
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.btn{
+    border-radius: .5rem;
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: aliceblue;
+    width: 9rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-primary{
+    background-color:rgb(57, 92, 247) ;
+    transition: .5s;
+}
+.btn-primary:hover{
+    background-color:rgb(255, 255, 255) ;
+    color: black;
+}
+.social{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.scroll_down{
+    transform: rotate(90deg)
+}
+.box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 4rem 0 4rem;
+}
+.me{
+    background-color: blue;
+    width: 15rem;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 12rem 12rem 0 0;
+    overflow: hidden;
+    
+}
+img{
+    width: 25rem;
+    height: 20rem;
+    position: relative;
+    right: 60px;
+}
+@media screen and (max-width:480px) and (min-width:320px){
+    .box{
+        display: none;
+    }
+    .cta{
+        flex-direction: column;
+        
+    }
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+        "center" 
+        ;
+        align-items: center;
+    }
+   
+}
+/* ipad and taplet */
+@media screen and   (min-width:481px) and (max-width:768px){
+    /* .box{
+        display: none;
+    } */
+    /* .cta{
+        flex-direction: column;
+    } */
+    .container{
+        padding-top: 2rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr ;
+        grid-template-areas: 
+        "center"
+        "box"
+        ;
+        align-items: start;
+    }
+    .box{
+        display: none;
+    }
+   
+}
